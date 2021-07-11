@@ -1,6 +1,7 @@
 import 'package:covid_19/screens/home/home_screen.dart';
 import 'package:covid_19/screens/news/news_screen.dart';
 import 'package:covid_19/screens/news_detail/news_detail_screen.dart';
+import 'package:covid_19/screens/profile/profile.dart';
 import 'package:covid_19/screens/stats/stats_screen.dart';
 import 'package:flutter/material.dart';
 class BottomNavBar extends StatelessWidget {
@@ -91,7 +92,7 @@ class BottomNavBar extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ArticlesScreen(),
+                  builder: (context) => ProfileScreen(),
                 ),
               );
             },

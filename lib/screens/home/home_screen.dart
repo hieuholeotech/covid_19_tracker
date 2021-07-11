@@ -4,6 +4,8 @@ import 'package:covid_19/screens/home/components/header_with_btn.dart';
 import 'package:covid_19/screens/home/components/news.dart';
 import 'package:covid_19/screens/home/components/stats_card.dart';
 import 'package:covid_19/screens/news_detail/news_detail_screen.dart';
+import 'package:covid_19/screens/schedule/schedule.dart';
+import 'package:covid_19/screens/sign_up/signup_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,10 +20,20 @@ class HomeScreen extends StatelessWidget {
           elevation: 0,
           title: Row(
             children: <Widget>[
-              CircleAvatar(
-                radius: 20,
-                backgroundImage: NetworkImage(
-                    "https://instagram.fdad2-1.fna.fbcdn.net/v/t51.2885-15/e35/149682940_115200393869131_9095836763101388810_n.jpg?tp=1&_nc_ht=instagram.fdad2-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=NjyLbTsTvo4AX93Q0TY&edm=AP_V10EBAAAA&ccb=7-4&oh=5da2a9bfe88bccd9b12cac0fc9e67e84&oe=60ED0CAA&_nc_sid=4f375e"),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SignUpScreen(),
+                    ),
+                  );
+                },
+                child: CircleAvatar(
+                  radius: 20,
+                  backgroundImage: NetworkImage(
+                      "https://instagram.fdad2-1.fna.fbcdn.net/v/t51.2885-15/e35/149682940_115200393869131_9095836763101388810_n.jpg?tp=1&_nc_ht=instagram.fdad2-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=NjyLbTsTvo4AX93Q0TY&edm=AP_V10EBAAAA&ccb=7-4&oh=5da2a9bfe88bccd9b12cac0fc9e67e84&oe=60ED0CAA&_nc_sid=4f375e"),
+                ),
               ),
               Spacer(),
               Container(
@@ -110,24 +122,26 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            CardItem(
-              title: "Follow your schedule",
-              description:
-                  "Lorem ispsum is simply dummy text of the printing and typesetting industry industry",
-              imageIcon: "asset/corona-ico.png",
-              iconColor: Color(0xFFF544df3),
-              iconRightColor: Color(0xFFF544df3),
-              primary: Color(0xFFFffffff),
-              titleColor: Color(0xFFF544df3),
-              descriptionColor: Color(0xFFF544df3),
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ArticlesScreen(),
-                  ),
-                );
-              },
+            GestureDetector(
+              child: CardItem(
+                title: "Follow your schedule",
+                description:
+                    "Lorem ispsum is simply dummy text of the printing and typesetting industry industry",
+                imageIcon: "asset/corona-ico.png",
+                iconColor: Color(0xFFF544df3),
+                iconRightColor: Color(0xFFF544df3),
+                primary: Color(0xFFFffffff),
+                titleColor: Color(0xFFF544df3),
+                descriptionColor: Color(0xFFF544df3),
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ScheduleScreen(),
+                    ),
+                  );
+                },
+              ),
             ),
             CardItem(
               title: "Follow your schedule",
@@ -139,7 +153,14 @@ class HomeScreen extends StatelessWidget {
               primary: Color(0xFFF544df3),
               titleColor: Color(0xFFffffff),
               descriptionColor: Color(0xFFffffff),
-              press: () {},
+              press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SignUpScreen(),
+                    ),
+                  );
+              },
             ),
             HeaderWithBtn(
               mainTitle: "Case Update",

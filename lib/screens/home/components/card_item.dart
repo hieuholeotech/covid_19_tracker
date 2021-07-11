@@ -12,7 +12,7 @@ class CardItem extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return GestureDetector(
-      onTap: () {},
+      onTap: press,
       child: Padding(
         padding: const EdgeInsets.only(left: 20, bottom: 0, top: 30, right: 20),
         child: Container(
